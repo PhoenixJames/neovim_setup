@@ -1,8 +1,22 @@
 {
+  "snippets.loadVSCodeProjectSnippets": true,
+  "snippets.autoTrigger": true,
   "coc.preferences.snippets.enable": true,
   "coc.preferences.snippetStatusText": "🌈",
   "coc.preferences.formatOnType": false,
   "coc.preferences.hoverTarget": "float",
+
+  "languageserver": {
+    "csharp": {
+      "command": "csharp-ls",
+      "rootPatterns": [
+        "*.sln",
+	"*.csproj",
+        "git"
+      ],
+      "filetypes": ["cs", "csharp"]
+    }
+  },
 
   "diagnostic.infoSign": "i",
   "diagnostic.hintSign": "*",

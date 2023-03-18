@@ -37,17 +37,13 @@ call plug#begin("~/.vim/plugged")
   Plug 'stevearc/aerial.nvim'
   
   " For JS/Ts
-  "Plug 'MaxMEllon/vim-jsx-pretty'
-  "Plug 'pangloss/vim-javascript'
-  "Plug 'leafgarland/typescript-vim'
-  "Plug 'peitalin/vim-jsx-typescript'
   Plug 'neoclide/vim-jsx-improve'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'jparise/vim-graphql'
   " coc for tslinting, auto complete and prettier
   Plug 'neoclide/coc.nvim', {'do': 'npm install'}
-  "Plug 'ianks/vim-tsx'
-  "Plug 'leafgarland/typescript-vim'
+  Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
+
   
   " For Git
   Plug 'lewis6991/gitsigns.nvim'
@@ -59,7 +55,6 @@ call plug#begin("~/.vim/plugged")
 call plug#end()
 
 set nocompatible
-"set shell=C:\\WINDOWS\\sysnative\\WindowsPowerShell\\v1.0\\powershell.exe
 set shell=pwsh
 set shellcmdflag=-command
 set shellquote=\"
@@ -398,7 +393,7 @@ autocmd TermEnter term://*toggleterm#*
 nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
 
-vnoremap <silent><C-c> "*y<CR><CR>
+inoremap <C-c> "*y<CR><CR>
 "vnoremap <C-c> :w !pbcopy<CR><CR>
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
 
@@ -597,5 +592,3 @@ require('aerial').setup({
 vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>')
 require('telescope').load_extension('aerial')
 EOF
-
-"Nerdtree hightlight---------------------------------------------------------------------------------------------------------
